@@ -12,13 +12,11 @@ def connect_to_db():
     conn = psycopg2.connect(
         dbname="mood_tracker",
         user="postgres",
-        password="newpassword",
-        host="172.17.0.2",
+        password="korp608134IT",
+        host="localhost",
         port="5432"
     )
-     print("Підключено до бази даних")
-except Exception as e:
-    print(f"Помилка підключення: {e}")
+   
     return conn
 
 mental1_health1_bot = telebot.TeleBot('6773157797:AAHk_A9WfRrpnHUyl2Ug0oZf-4mX5ByAQiU')
