@@ -13,7 +13,7 @@ def connect_to_db():
         dbname="mood_tracker",
         user="postgres",
         password="korp608134IT",
-        host="localhost",
+        host="172.17.0.2",
         port="5432"
     )
     return conn
