@@ -1017,3 +1017,8 @@ def empty(message):
     mental1_health1_bot.send_message(message.chat.id, text=response_message)
 
 mental1_health1_bot.polling()
+
+port = int(os.environ.get("PORT", 5432))
+    import time
+    while True:
+        time.sleep(1000)
