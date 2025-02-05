@@ -8,8 +8,6 @@ import aiohttp
 import asyncio
 import os
 
-conn = psycopg2.connect(DATABASE_URL, sslmode="require")
-
 def connect_to_db():
    DATABASE_URL = os.getenv("DATABASE_URL")
 
