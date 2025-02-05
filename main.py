@@ -7,7 +7,10 @@ from datetime import datetime
 import aiohttp
 import asyncio
 import os
+from flask import Flask
+from threading import Thread
 
+app = Flask(__name__)
 
 def connect_to_db():
     conn = psycopg2.connect(
@@ -22,6 +25,9 @@ def connect_to_db():
 
 mental1_health1_bot = telebot.TeleBot('6773157797:AAHk_A9WfRrpnHUyl2Ug0oZf-4mX5ByAQiU')
 
+@app.route('/')
+def home():
+    return "Bot is running!"
 
 SOUNDS_API = {
     "rain": "https://mynoise.net/NoiseMachines/rainNoiseGenerator.php",
@@ -1015,5 +1021,12 @@ def empty(message):
         "Sorry, this command is unknown for me."
     )
 
-if __name__ == "__main__":
+def run_bot():
     mental1_health1_bot.polling(none_stop=True)
+
+if __name__ == "__main__":
+    # Start the Flask app in a separate thread
+    thread = Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': int(os.environ.get('PORT', 5000))})
+    thread.start()
+
+    run_bot()
