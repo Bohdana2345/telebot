@@ -14,8 +14,8 @@ def connect_to_db():
    if not DATABASE_URL:
         raise ValueError("DATABASE_URL is not set")
 
-    conn = psycopg2.connect(DATABASE_URL, sslmode="require") 
-    return conn
+   conn = psycopg2.connect(DATABASE_URL, sslmode="require") 
+   return conn
 
 mental1_health1_bot = telebot.TeleBot('6773157797:AAHk_A9WfRrpnHUyl2Ug0oZf-4mX5ByAQiU')
 
