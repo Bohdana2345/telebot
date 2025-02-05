@@ -1021,7 +1021,7 @@ mental1_health1_bot.polling()
 import os
 import time
 
-port = int(os.environ.get("PORT", 5432))
+port = int(os.environ.get("PORT", 5000))
 
 while True:
     time.sleep(1000)
