@@ -8,9 +8,10 @@ import aiohttp
 import asyncio
 import os
 
+conn = psycopg2.connect(DATABASE_URL, sslmode="require")
 
 def connect_to_db():
-    DATABASE_URL = os.getenv("postgresql://postgres:vBITgiFpJcwkGFkXnbfUdvCjTJRNxfwP@postgres.railway.internal:5432/railway")  
+   DATABASE_URL = os.getenv("DATABASE_URL")
 
     if not DATABASE_URL:
         raise ValueError("DATABASE_URL is not set")
