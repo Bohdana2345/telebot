@@ -1017,4 +1017,4 @@ def empty(message):
 
     mental1_health1_bot.send_message(message.chat.id, text=response_message)
 
-mental1_health1_bot.polling()
+mental1_health1_bot.polling(none_stop=True, timeout=20)
