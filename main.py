@@ -6,6 +6,7 @@ import random
 from datetime import datetime
 import aiohttp
 import asyncio
+import os
 
 
 def connect_to_db():
@@ -1014,14 +1015,7 @@ def empty(message):
         "Sorry, this command is unknown for me."
     )
 
-    mental1_health1_bot.send_message(message.chat.id, text=response_message)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  
+    mental1_health1_bot.polling()  
 
-mental1_health1_bot.polling()
-
-import os
-import time
-
-port = int(os.environ.get("PORT", 5000))
-
-while True:
-    time.sleep(1000)
