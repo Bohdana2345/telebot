@@ -1016,6 +1016,4 @@ def empty(message):
     )
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  
-    mental1_health1_bot.polling()  
-
+    mental1_health1_bot.polling(none_stop=True)
