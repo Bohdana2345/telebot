@@ -11,7 +11,7 @@ import os
 def connect_to_db():
    DATABASE_URL = os.getenv("DATABASE_URL")
 
-    if not DATABASE_URL:
+   if not DATABASE_URL:
         raise ValueError("DATABASE_URL is not set")
 
     conn = psycopg2.connect(DATABASE_URL, sslmode="require") 
