@@ -16,7 +16,7 @@ def connect_to_db():
     conn = psycopg2.connect(
         dbname="mood_tracker",
         user="postgres",
-        password="korp608134IT",
+        password="28022006",
         host="localhost",
         port="5432"
     )
